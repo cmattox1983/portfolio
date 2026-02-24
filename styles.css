@@ -153,7 +153,7 @@ nav,
 }
 
 /* DARK THEME */
-.dark-theme body {
+body.dark-theme {
   background: #0b1220;
 }
 
@@ -229,6 +229,14 @@ nav {
   font-weight: 700;
 }
 
+.nav__link--anchor,
+.menu__link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+}
+
 .fa-circle-half-stroke {
   font-size: 20px;
 }
@@ -236,12 +244,6 @@ nav {
 .menu--open {
   overflow-y: hidden;
   max-height: 100vh;
-}
-
-.menu--open .menu__backdrop {
-  display: flex;
-  visibility: visible;
-  opacity: 1;
 }
 
 .btn__menu {
@@ -266,6 +268,10 @@ nav {
   display: none;
 }
 
+.menu--open .btn__menu--close {
+  display: block;
+}
+
 .menu__backdrop {
   position: fixed;
   background-color: #0f172a;
@@ -274,18 +280,20 @@ nav {
   top: 0;
   bottom: 0;
   z-index: 100;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   opacity: 0;
   visibility: hidden;
   transition: all 300ms ease;
+  pointer-events: none;
 }
 
 .menu--open .menu__backdrop {
   display: flex;
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .menu__links {
@@ -339,6 +347,10 @@ nav {
 .menu__list--theme .menu__link--dark-mode {
   opacity: 1;
   visibility: visible;
+  pointer-events: none;
+}
+
+.menu--open .menu__list--theme .menu__link--dark-mode {
   pointer-events: auto;
 }
 
@@ -351,6 +363,10 @@ nav {
 .dark-theme .menu__list--theme .menu__link--light-mode {
   opacity: 1;
   visibility: visible;
+  pointer-events: none;
+}
+
+.menu--open.dark-theme .menu__list--theme .menu__link--light-mode {
   pointer-events: auto;
 }
 
@@ -701,12 +717,14 @@ nav {
     visibility 1s,
     z-index 1s,
     box-shadow 0.5s ease;
+  pointer-events: none;
 }
 
 .modal--open .modal {
   z-index: 60;
   box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
   visibility: visible;
+  pointer-events: auto;
 }
 
 .modal__half {
@@ -1774,6 +1792,7 @@ footer {
 @media (max-width: 1400px) {
   .modal {
     max-height: 580px;
+    pointer-events: none;
   }
 }
 
@@ -1822,6 +1841,7 @@ footer {
     width: 100%;
     flex-direction: column-reverse;
     border-radius: 0;
+    pointer-events: none;
   }
 
   .modal__half {

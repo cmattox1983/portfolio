@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/d34fcc86fa.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" defer></script>
+    <title>Chris Mattox</title>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "6zqW3py9NiJOQwCN6",
+        });
+      })();
+    </script>
+  </head>
+
+  <body>
+    <section id="landing-page">
+      <div class="sunburst" aria-hidden="true"></div>
+      <div class="lensflare" aria-hidden="true">
+        <span class="orb orb--1"></span>
+        <span class="orb orb--2"></span>
+        <span class="orb orb--3"></span>
+      </div>
+      <nav>
+        <figure>
+          <img id="personal-logo" src="./assets/ChrisMattoxLogo.png" alt="" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a
+              href="#gallery"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Gallery</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Contact</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              ><i class="fa-solid fa-circle-half-stroke"></i
+            ></a>
+          </li>
+        </ul>
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li class="menu__list">
+              <a
+                href="#gallery"
+                class="menu__link menu__link--gallery"
+                onclick="closeMenu()"
+                >Gallery</a
+              >
+            </li>
+            <li class="menu__list">
+              <a
+                href="#projects"
+                class="menu__link menu__link--projects"
+                onclick="closeMenu()"
+                >Projects</a
+              >
+            </li>
+            <li class="menu__list">
+              <a
+                href="#"
+                class="menu__link menu__link--contact"
+                onclick="
+                  closeMenu();
+                  toggleModal();
+                "
+                >Contact</a
+              >
+            </li>
+
+            <li class="menu__list menu__list--theme">
+              <a
+                href="#"
+                class="menu__link menu__link--dark-mode"
+                onclick="
+                  toggleContrast();
+                  closeMenu();
+                "
+                >Dark Mode</a
+              >
+              <a
+                href="#"
+                class="menu__link menu__link--light-mode"
+                onclick="
+                  toggleContrast();
+                  closeMenu();
+                "
+                >Light Mode</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title blue">I'm Chris</h1>
+
+          <p class="header__para">
+            I'm a <b class="blue">frontend software developer</b> who loves
+            designing web applications that provide great user experiences!
+            <br />
+            Here is a little more
+            <b class="blue click" onclick="toggleModal()">about me.</b>
+          </p>
+
+          <div class="social__links">
+            <a
+              href="https://www.linkedin.com/in/christopher-p-mattox/"
+              class="social__link click"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://github.com/cmattox1983"
+              class="social__link click"
+              target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="#" class="social__link click"
+              ><i class="fa-solid fa-file-pdf"></i
+            ></a>
+          </div>
+        </div>
+      </header>
+
+      <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
+
+      <a href="#gallery" class="scroll">
+        <div class="scroll__icon" click></div>
+      </a>
+
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">
+            Here's a bit about me.
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Developer
+          </h4>
+          <p class="modal__para">
+            I'm a <b class="blue">frontend software developer</b> who is
+            passionate about developing websites with
+            <b class="blue">great user experiences.</b>
+            <br />
+            I currently work on difficult frontend problems and learn from a
+            team of some of the most <b class="blue">talented</b> and
+            <b class="blue">experienced</b> software developers every day.
+            <br />
+            I am located in the Tampa, FL area, but I'm open to
+            <b class="blue">all opportunites.</b>
+          </p>
+
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-html (1).svg"
+                class="modal__language--img"
+                alt="HTML"
+              />
+              <span class="language__name">HTML</span>
+            </figure>
+
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-css (1).svg"
+                class="modal__language--img"
+                alt="CSS"
+              />
+              <span class="language__name">CSS</span>
+            </figure>
+
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-javascript (1).svg"
+                class="modal__language--img"
+                alt="JavaScript"
+              />
+              <span class="language__name">JavaScript</span>
+            </figure>
+
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-react.svg"
+                class="modal__language--img"
+                alt="React"
+              />
+              <span class="language__name">React</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-typescript.svg"
+                class="modal__language--img"
+                alt="TypeScript"
+              />
+              <span class="language__name">TypeScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-next.js.svg"
+                class="modal__language--img"
+                alt="Next"
+              />
+              <span class="language__name">Next</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-node-js-48.png"
+                class="modal__language--img"
+                alt="Node JS"
+              />
+              <span class="language__name">Node JS</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="./assets/icons8-redux-50.png"
+                class="modal__language--img"
+                alt="Redux"
+              />
+              <span class="language__name">Redux</span>
+            </figure>
+          </div>
+        </div>
+
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">
+            I'm currently open to new opportunities.
+          </h4>
+
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required />
+            </div>
+
+            <div class="form__item">
+              <label class="form__item--label">E-mail</label>
+              <input class="input" name="user_email" type="email" required />
+            </div>
+
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" required></textarea>
+            </div>
+
+            <button id="contact__submit" class="form__submit">
+              Send it my way
+            </button>
+          </form>
+
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message, looking forward to speaking with you soon!
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <h1 class="gallery__title">
+            My <span class="blue">gallery</span> featuring some of my animations
+          </h1>
+          <div class="gallery__list">
+            <div class="gallery__item gallery__item--watch">
+              <div id="watch">
+                <div class="number">I</div>
+                <div class="number">II</div>
+                <div class="number">III</div>
+                <div class="number">IV</div>
+                <div class="number">V</div>
+                <div class="number">VI</div>
+                <div class="number">VII</div>
+                <div class="number">VIII</div>
+                <div class="number">IX</div>
+                <div class="number">X</div>
+                <div class="number">XI</div>
+                <div class="number">XII</div>
+                <div class="handle handle__second"></div>
+                <div class="handle handle__minute"></div>
+                <div class="handle handle__hour"></div>
+              </div>
+            </div>
+            <div class="gallery__item gallery__item--butterfly">
+              <div class="butterfly">
+                <div class="butterfly__body">
+                  <div class="butterfly__body--head">
+                    <div class="butterfly__body--head-antennae-left"></div>
+                    <div class="butterfly__body--head-antennae-right"></div>
+                  </div>
+                  <div class="butterfly__wing butterfly__wing--left">
+                    <div class="butterfly__wing--left-top"></div>
+                    <div class="butterfly__wing--left-bottom"></div>
+                  </div>
+                  <div class="butterfly__wing butterfly__wing--right">
+                    <div class="butterfly__wing--right-top"></div>
+                    <div class="butterfly__wing--right-bottom"></div>
+                  </div>
+                  <div class="butterfly__body--tail"></div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery__item gallery__item--aurora">
+              <canvas class="stars"></canvas>
+              <div class="aurora__glow"></div>
+            </div>
+            <div class="gallery__item gallery__item--spotlight">
+              <div class="spotlight">
+                <div class="spotlight__beam"></div>
+                <div class="spotlight__cutout"></div>
+                <div class="spotlight__head">
+                  <img
+                    id="spotlight-logo"
+                    src="./assets/ChrisMattoxLogo.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="clouds">
+                <div class="cloud cloud--1"></div>
+                <div class="cloud cloud--2"></div>
+                <div class="cloud cloud--3"></div>
+              </div>
+            </div>
+            <div class="gallery__item gallery__item--diamonds">
+              <div class="diamonds">
+                <div class="diamond diamond--1"></div>
+                <div class="diamond diamond--2"></div>
+                <div class="diamond diamond--3"></div>
+                <div class="diamond diamond--4"></div>
+                <div class="diamond diamond--5"></div>
+                <div class="diamond diamond--6"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="blue">projects</span>
+          </h1>
+
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/netflix-clone.png"
+                  class="project__img"
+                  alt="Netflix Clone Project"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Netflix Clone Project
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, Tailwind CSS, React, TMDB API
+                  </h4>
+                  <p class="project__description--para">
+                    A fully responsive Netflix clone built with React and
+                    Tailwind CSS, powered by the TMDB API for real-time movie
+                    data. Users can browse trending titles, explore categories,
+                    and view detailed information in a clean, modern interface
+                    designed to mirror a real streaming experience.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/cmattox1983/netflix-clone"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://netflix-clone-vercel-lac.vercel.app/"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/skinstric-ai.png"
+                  class="project__img"
+                  alt="Skinstric AI Internship"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Skinstric AI Internship
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, Tailwind CSS, Next, React, Vercel, Figma, Base64
+                  </h4>
+                  <p class="project__description--para">
+                    An AI-powered web app where users can upload or capture a
+                    selfie and receive predicted demographic insights such as
+                    age, gender, and ethnicity. Built with Next.js and React,
+                    the project integrates facial recognition APIs, real-time
+                    image processing, and dynamic UI updates to deliver a
+                    seamless, interactive experience.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/cmattox1983/Skinstric-AI-Internship"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://skinstric-mattox.vercel.app/"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/summarist.png"
+                  class="project__img"
+                  alt="Summarist Virtual Internship"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Summarist Virtual Internship
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, Next, React Icons, Redux, Firebase, Stripe,
+                    Vercel
+                  </h4>
+                  <p class="project__description--para">
+                    A full-stack book summary platform where users can create
+                    free or premium accounts, browse titles via API integration,
+                    and add books to their cart to access audio versions and
+                    written summaries. Built with Next.js, Redux, Firebase, and
+                    Stripe, the project focuses on authentication, state
+                    management, and seamless user experience.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/cmattox1983/Virtual-Internship-Summarist"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://virtual-internship-summarist-uw2o.vercel.app/"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/ultraverse.png"
+                  class="project__img"
+                  alt="Ultraverse Project"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Ultraverse Project
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, React, Bootstrap, Owl Carousel
+                  </h4>
+                  <p class="project__description--para">
+                    In this internship project, I transformed a fully static
+                    book website into a dynamic, API-driven application. I
+                    integrated multiple endpoints to render books by category,
+                    fetch individual books by ID, and display them using Owl
+                    Carousel, focusing on clean data flow and real-time content
+                    rendering.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/cmattox1983/chris-internship"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://cmattox1983.github.io/chris-internship/"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/posterize.png"
+                  class="project__img"
+                  alt="Posterize Movie Project"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Posterize Movie Project
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, React, IMDb API
+                  </h4>
+                  <p class="project__description--para">
+                    A React-based movie search application powered by the IMDb
+                    API, allowing users to search by title and instantly access
+                    posters, summaries, ratings, and official IMDb links.
+                    Features include dynamic rendering, real-time API
+                    integration, and sorting by newest, oldest, or highest-rated
+                    results for a smooth browsing experience.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/cmattox1983/movie-react-project"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://cmattox1983.github.io/movie-react-project/"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/library.png"
+                  class="project__img"
+                  alt="Library Project"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Library Project</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, React
+                  </h4>
+                  <p class="project__description--para">
+                    A mock e-commerce library website built with React,
+                    featuring dynamic routing, shopping cart functionality, and
+                    sorting capabilities. The project focuses on state
+                    management, reusable components, and creating a smooth,
+                    interactive browsing and checkout experience.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/cmattox1983/library-react"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://library-react-alpha.vercel.app/"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/treact.png"
+                  class="project__img"
+                  alt="Treact Project"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Treact Project</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, JavaScript
+                  </h4>
+                  <p class="project__description--para">
+                    My first project focused on building a fully responsive
+                    landing page using HTML, CSS, and JavaScript. It emphasized
+                    strong layout structure, clean styling, and interactive
+                    elements, showcasing my foundation in frontend development
+                    and attention to design detail.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/cmattox1983/Treact"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://cmattox1983.github.io/Treact/#"
+                      class="project__description--link"
+                      target="blank"
+                    >
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img
+              src="./assets/ChrisMattoxLogo.png"
+              class="footer__logo--img"
+              alt="logo"
+            />
+          </figure>
+
+          <div class="footer__social--list">
+            <a
+              href="#"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >GitHub</a
+            >
+            <a
+              href="#"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >LinkedIn</a
+            >
+            <a
+              href="#"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Resume</a
+            >
+          </div>
+
+          <div class="footer__copyright">Copyright © 2026 Chris Mattox</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
